@@ -1,9 +1,11 @@
 #lang sicp
 
-; 1.1.7 Square Roots by Newton's Method
+#|
+    1.1.7 Square Roots by Newton's Method
+    Distinction between mathematical formulations and procedures - the former is declarative
+    (describes what is) and the latter is imperative (derscribes how to)
+|#
 
-; Distinction between mathematical formulations and procedures - the former is declarative (describes
-; what is) and the latter is imperative (derscribes how to)
 
 (define (sqrt-iter guess x)
   (if (good-enough? guess x)
@@ -19,8 +21,6 @@
 
 (define (square x ) (* x x))
 
-; the book comments that this is not a very good check - perhaps relative tolerance makes more sense
-; here than the absolute?
 (define (good-enough? guess x)
 (< (abs (- (square guess) x)) 0.001))
 
